@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Aesthete (ILY)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    .w3-sidebar a {
+      font-family: "Roboto", sans-serif
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+
+    .w3-wide {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .sidebar-flex {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .sidebar-content {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .sidebar-footer {
+      padding-bottom: 16px;
+      border-top: 1px solid #ccc;
+      margin-top: 3 em;
+    }
+
+    .footer {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 600px) {
+      .sidebar-flex {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="w3-content" style="max-width:1200px">
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top sidebar-flex" style="z-index:3;width:250px"
+    id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16">
+      <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+      <h3 class="w3-wide"><img src="img/LogoHeader/logo-01.jpg" style="width:80%"></h3>
+    </div>
+
+    <div class="w3-bar-block sidebar-content">
+      <a href="uas webdes.html" class="w3-bar-item w3-button">Home</a>
+      <a onclick="myAccFunc()" href="#" class="w3-bar-item w3-button" id="myBtn">Product <i
+          class="fa fa-caret-down"></i></a>
+
+      <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+        <a href="#top-section" class="w3-bar-item w3-button">Top</a>
+        <a href="#vest-section" class="w3-bar-item w3-button">Vest</a>
+        <a href="#blouse-section" class="w3-bar-item w3-button">Blouse</a>
+        <a href="#bottom-section" class="w3-bar-item w3-button">Bottom</a>
+        <a href="#dress-section" class="w3-bar-item w3-button">Dress</a>
+        <a href="#set-section" class="w3-bar-item w3-button">Set</a>
+      </div>
+
+      <div>
+        <a href="order.html" class="w3-bar-item w3-button">How to Order</a>
+        <a href="aboutus.html" class="w3-bar-item w3-button">About Us</a>
+      </div>
+    </div>
+
+    <!-- Footer Navigation fixed to bottom -->
+    <div class="sidebar-footer">
+      <a href="#footer" class="w3-bar-item w3-button w3-padding">Subscribe</a>
+      <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact Us</a>
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding"
+        onclick="document.getElementById('membership').style.display='block'">Membership</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+    <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i
+        class="fa fa-bars"></i></a>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:250px">
+
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+    <!-- Top header -->
+    <header class="w3-container w3-xlarge">
+      <p class="w3-left">Home</p>
+      <p class="w3-right">
+        <i class="fa fa-shopping-cart w3-margin-right" style="width: 20px;" onclick="location.href='order.html'"
+          onmouseover="this.style.color='rgb(255, 0, 183)'" onmouseout="this.style.color=''"></i>
+      </p>
+    </header>
+
+    <!-- Image header -->
+    <div class="w3-display-container w3-container">
+      <img src="img/LogoHeader/header2.jpg" alt="Home" style="width:100%">
+      <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+        <p><a href="#top-section" class="w3-button w3-white w3-padding-large w3-large">SHOP NOW</a></p>
+      </div>
+    </div>
+
+    <!-- Top Section -->
+    <div id="top-section" class="w3-container w3-padding-4">
+      <h3 class="w3-border-bottom w3-padding-16">Top</h3>
+      <div class="w3-row-padding">
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Top/claire ribbon top.jpg" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">HOT</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Claire+Ribbon+Top'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Claire Ribbon Top<br><b>IDR 135.000</b></p>
+          </div>
+
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Top/celeste ribbon top.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Celeste+Ribbon+Top'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Celeste Ribbon Top<br><b>IDR 119.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Top/yejin.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Yejin+Top'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Yejin Top<br><b>IDR 99.000</b></p>
+          </div>
+
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Top/eloise top.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Eloise+Top'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Eloise Top<br><b>IDR 119.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Top/dorothea top.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Dorothea+Top'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Dorothea Top<br><b>IDR 105.000</b></p>
+          </div>
+
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Top/bridgeton top.jpg" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">LIMITED</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Bridgeton+Top'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Bridgeton Top<br><b>IDR 109.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Top/carol bow top.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Carol+Bow+Top'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Carol Bow Top<br><b>IDR 119.000</b></p>
+          </div>
+
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Top/ophelia bow longsleeve.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Ophelia+Bow+Top'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Ophelia Bow Top<br><b>IDR 129.000</b></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Vest Section -->
+    <div id="vest-section" class="w3-container w3-padding-4">
+      <h3 class="w3-border-bottom w3-padding-16">Vest</h3>
+      <div class="w3-row-padding">
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Vest/blaire vest 109k.JPG" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">HOT</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Blaire+Vest'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Blaire Vest<br><b>IDR 109.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Vest/jodie tweed vest.jpg" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">LIMITED</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Jodie+Tweed+Vest'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Jodie Tweed Vest<br><b>IDR 135.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Vest/margot lace halter vest 149k.JPG" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black"
+                  onclick="location.href='order.html?product=Margot+Lace+Halter+Vest'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Margot Lace Halter<br><b>IDR 149.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Vest/samantha vest 109k.JPG" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Samantha+Vest'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Samantha Vest<br><b>IDR 109.000</b></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Blouse Section -->
+    <div id="blouse-section" class="w3-container w3-padding-4">
+      <h3 class="w3-border-bottom w3-padding-16">Blouse</h3>
+      <div class="w3-row-padding">
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Blouse/heather blouse 149k.JPG" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">HOT</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Heather+Blouse'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>heather blouse<br><b>IDR 149.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Blouse/shanna blouse.JPG" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Shanna+Blouse'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Shanna Blouse<br><b>IDR 139.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Blouse/lola blouse lace 159k.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Lola+Blouse+Lace'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Lola Blouse Lace<br><b>IDR 159.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Blouse/marilyn blouse 139k.JPG" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">LIMITED</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Marilyn+Blouse'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Marilyn Blouse<br><b>IDR 139.000</b></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div id="bottom-section" class="w3-container w3-padding-4">
+      <h3 class="w3-border-bottom w3-padding-16">Bottom</h3>
+      <div class="w3-row-padding">
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Bottom/daphne skirt 169k.JPG" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">HOT</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Daphne+Skirt'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Daphne Skirt<br><b>IDR 169.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Bottom/genova maxi skirt 179k.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Genova+Maxi+Skirt'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Genova Maxi Skirt<br><b>IDR 179.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Bottom/sunmi stripe pants 179k.JPG" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Sunmi+Stripe+Pants'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Sunmi Stripe Pants<br><b>IDR 179.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Bottom/jessi pants 129k.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Jessi+Pants'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Jessi Pants<br><b>IDR 129.000</b></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Dress Section -->
+    <div id="dress-section" class="w3-container w3-padding-4">
+      <h3 class="w3-border-bottom w3-padding-16">Dress</h3>
+      <div class="w3-row-padding">
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Dress/alessandra corset dress 139k.JPG" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">HOT</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black"
+                  onclick="location.href='order.html?product=Alessandra+Corset+Dress'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Alessandra Corset<br><b>IDR 139.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Dress/daphne skirt 169k.jpg" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Daphne+Skirt+Dress'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Daphne Skirt Dress<br><b>IDR 169.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Dress/alma lace dress 179k.JPG" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Alma+Lace+Dress'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Alma Lace Dress<br><b>IDR 179.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Dress/rhea dress 199k.JPG" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">LIMITED</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Rhea+Dress'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Rhea Dress<br><b>IDR 199.000</b></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Set Section -->
+    <div id="set-section" class="w3-container w3-padding-4">
+      <h3 class="w3-border-bottom w3-padding-16">Set</h3>
+      <div class="w3-row-padding">
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Set/aesthete sleepstory 219k.JPG" style="width:100%">
+              <span class="w3-tag w3-red w3-display-topleft">HOT</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black"
+                  onclick="location.href='order.html?product=Aesthete+Sleepstory+Set'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Aesthete Sleepstory<br><b>IDR 219.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Set/victoria set 218k.JPG" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Victoria+Set'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Victoria Set<br><b>IDR 218.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Set/aletta set 208k.JPG" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Aletta+Set'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Aletta Set<br><b>IDR 208.000</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="img/Set/vivienne bow set 208k.JPG" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="location.href='order.html?product=Vivienne+Bow+Set'">Buy
+                  now<i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Vivienne Bow Set<br><b>IDR 208.000</b></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Subscribe section -->
+    <div class="w3-container w3-pink w3-padding-24">
+      <h1>Subscribe</h1>
+      <p>To get special offers and VIP treatment:</p>
+      <p><input id="subscribeEmail" class="w3-input w3-border" type="text" placeholder="Enter e-mail"
+          style="width:100%"></p>
+      <button type="button" class="w3-button w3-yellow w3-margin-bottom" onclick="handleSubscribe()">Subscribe</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-padding-32 w3-light-grey footer w3-small w3-center" id="footer">
+      <div class="w3-container w3-content">
+        <div class="w3-row" style="display: flex; justify-content: center;">
+          <div class="w3-col l6 m8 s12 w3-center">
+            <h3>Contact Us</h3>
+            <p>Questions? Go ahead.</p>
+            <form id="contactFormElement">
+              <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+              <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+              <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+              <p><textarea class="w3-input w3-border" type="text" placeholder="Message" name="Message"
+                  required></textarea></p>
+              <button type="submit" class="w3-button w3-block w3-pink">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Membership Modal -->
+  <div id="membership" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+      <div class="w3-container w3-white w3-center">
+        <i onclick="document.getElementById('membership').style.display='none'"
+          class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+        <h2 class="w3-wide">MEMBERSHIP</h2>
+        <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+        <p><input id="membershipEmail" class="w3-input w3-border" type="email" placeholder="Enter e-mail"></p>
+        <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom"
+          onclick="handleMembership()">Join</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('contactFormElement').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Question Submitted!',
+        text: 'You have successfully submitted your question, thanks for support!',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        window.location.href = 'uas webdes.html';
+      });
+    });
+
+    function handleMembership() {
+      const emailInput = document.getElementById('membershipEmail').value.trim();
+
+      // Cek apakah email kosong
+      if (!emailInput) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Email Required',
+          text: 'Please enter your email before joining.',
+        });
+        return;
+      }
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Membership Submitted Successfully!',
+        text: 'Thank you for joining our mailing list :)',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        window.location.href = 'uas webdes.html';
+      });
+    }
+
+    function handleSubscribe() {
+      const emailInput = document.getElementById('subscribeEmail').value.trim();
+
+      if (!emailInput) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Email Required',
+          text: 'Please enter your email before claiming the special offers.',
+        });
+        return;
+      }
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Subscribed Successfully!',
+        text: 'Stay tuned with our special offers and VIP treatment',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        window.location.href = 'uas webdes.html';
+      });
+    }
+
+    // Accordion 
+    function myAccFunc() {
+      var x = document.getElementById("demoAcc");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    document.getElementById("myBtn").click();
+
+    // Open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+  </script>
+
+</body>
+
+</html>
