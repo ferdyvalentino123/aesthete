@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Order</title>
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .order-card {
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 22px;
+            border-radius: 20px;
+            box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.26);
+            margin: 120px auto;
+        }
+
+        @media (max-width: 600px) {
+            .order-card {
+                margin: 20px;
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body class="w3-light-grey">
+    <div class="w3-start w3-margin-bottom w3-display-topright">
+        <a href="uas webdes.html" class="w3-button w3-pink w3-round-small">Back to Home</a>
+    </div>
+    <div class="w3-card w3-white order-card w3-animate-opacity" id="orderForm">
+        <h2 class="w3-center" style="font-weight: bold; font-family: 'FontAwesome'">O R D E R</h2>
+        <p class="w3-center" style="font-style: italic;">Please fill out the form below to place your order</p>
+
+        <form id="orderFormElement">
+            <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required
+                    style="border-radius: 10px;"></p>
+            <p><input class="w3-input w3-border" type="email" placeholder="Email" name="Email" required
+                    style="border-radius: 10px;"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Product Name" name="Product" id="subjectInput"
+                    required style="border-radius: 10px;"></p>
+            <p><input class="w3-input w3-border" placeholder="Address" name="Address" required
+                    style="border-radius: 10px;"></p>
+            <button type="submit" class="w3-button w3-pink w3-block" style="border-radius: 10px;">Send</button>
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+
+        if (product) {
+            document.addEventListener('DOMContentLoaded', function () {
+                const subjectInput = document.getElementById('subjectInput');
+                if (subjectInput) {
+                    subjectInput.value = product;
+                }
+
+                const orderForm = document.getElementById('orderForm');
+                if (orderForm) {
+                    orderForm.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+        document.getElementById('orderFormElement').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Order Submitted!',
+                text: 'Your order has been placed successfully.',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = 'uas webdes.html';
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
